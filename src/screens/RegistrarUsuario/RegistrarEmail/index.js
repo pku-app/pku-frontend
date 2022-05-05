@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import { View, Modal, Button, StatusBar, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
 
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 
 //STYLE
-import { LAppContainer, LAppInput,
+import { LAppContainer, LAppInput, 
   LAppText, LAppSocialButtonFacebook, LAppViewInput} from '../style';
 
-  export default function RegistrarSenha({ navigation }) {
+export default function RegistrarEmail({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleConfirm, setmodalVisibleConfirm] = useState(false);
   return (
     <LAppContainer style={{backgroundColor:'#C8F5EE'}}>
         <View style={{margin:50,}}>
+            {/*COLOCAR NOME NO LUGAR DE XXXX */}
             <LAppText  style={{textAlign: 'center',}}>
-                Agora vamos criar uma 
+                Vou precisar também de um
                 <LAppText style={{textAlign: 'center', fontWeight: 'bold'}}>
-                {' '} senha
+                {' '}email
                 </LAppText>
-                , necessario que tenha no minimo 6 caracteres
             </LAppText>
         </View>
         
@@ -40,7 +40,7 @@ import { LAppContainer, LAppInput,
                     VOLTAR
                 </LAppText>
             </LAppSocialButtonFacebook>
-            <LAppSocialButtonFacebook onPress={() => navigation.navigate('RegistrarSenhaRepetir')} style={{backgroundColor: '#A9DA6B'}}>
+            <LAppSocialButtonFacebook onPress={() => navigation.navigate('RegistrarCpf')} style={{backgroundColor: '#A9DA6B'}}>
                 <LAppText style={{color:'#FFFFFF',}}>
                     CONTINUAR...
                 </LAppText>

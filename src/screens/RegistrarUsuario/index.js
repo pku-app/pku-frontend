@@ -79,7 +79,7 @@ export default function RegistrarUsuario({ navigation }) {
                     VOLTAR
                 </LAppText>
             </LAppSocialButtonFacebook>
-            <LAppSocialButtonFacebook style={{backgroundColor: '#A9DA6B'}} onPress={() => navigation.navigate('LoginSenha')}>
+            <LAppSocialButtonFacebook style={{backgroundColor: '#A9DA6B'}} onPress={() => navigation.navigate('RegistrarNome')}>
                 <LAppText style={{color:'#FFFFFF',}}>
                     CONTINUAR...
                 </LAppText>

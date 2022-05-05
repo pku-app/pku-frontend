@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LAppContainer, LAppInput,
   LAppText, LAppSocialButtonFacebook, LAppViewInput} from '../style';
 
-  export default function RegistrarSenha({ navigation }) {
+  export default function RegistrarPeso({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleConfirm, setmodalVisibleConfirm] = useState(false);
@@ -17,15 +17,20 @@ import { LAppContainer, LAppInput,
     <LAppContainer style={{backgroundColor:'#C8F5EE'}}>
         <View style={{margin:50,}}>
             <LAppText  style={{textAlign: 'center',}}>
-                Agora vamos criar uma 
-                <LAppText style={{textAlign: 'center', fontWeight: 'bold'}}>
-                {' '} senha
-                </LAppText>
-                , necessario que tenha no minimo 6 caracteres
+                Para fazer os calculos e fornecer tudo certinho para voce
             </LAppText>
         </View>
         
         {/*IMAGEM */}
+
+        <View style={{margin:50,}}>
+            <LAppText  style={{textAlign: 'center',}}>
+                qual seu
+                <LAppText style={{textAlign: 'center', fontWeight: 'bold'}}>
+                {' '}peso
+                </LAppText>
+            </LAppText>
+        </View>
 
         <View style={{marginHorizontal:20}}>
             <LAppViewInput>
@@ -40,7 +45,7 @@ import { LAppContainer, LAppInput,
                     VOLTAR
                 </LAppText>
             </LAppSocialButtonFacebook>
-            <LAppSocialButtonFacebook onPress={() => navigation.navigate('RegistrarSenhaRepetir')} style={{backgroundColor: '#A9DA6B'}}>
+            <LAppSocialButtonFacebook onPress={() => navigation.navigate('RegistrarPhe')} style={{backgroundColor: '#A9DA6B'}}>
                 <LAppText style={{color:'#FFFFFF',}}>
                     CONTINUAR...
                 </LAppText>

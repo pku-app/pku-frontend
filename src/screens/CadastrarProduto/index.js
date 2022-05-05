@@ -1,9 +1,9 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState  } from 'react';
 import { StyleSheet, View, TouchableOpacity, ScrollView, Modal, Button } from 'react-native';
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 import {useDispatch, useSelector} from 'react-redux';
 import {SaveProductRequest} from '../../store/modules/Registro/actions.js'
-import { CenterAlign, Container, Txt, TxtTitle, Input } from './styles.js';
+import { Input } from './styles.js';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 export default function CadastrarProduto({ navigation }) {

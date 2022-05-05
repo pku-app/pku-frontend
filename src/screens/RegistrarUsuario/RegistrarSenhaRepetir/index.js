@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { View, Modal, Button, StatusBar, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
 
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 
 //STYLE
-import { LAppContainer, LAppInput,
-  LAppText, LAppSocialButtonFacebook, LAppViewInput} from '../style';
+import { LAppContainer, LAppInput, 
+    LAppText, LAppSocialButtonFacebook, LAppViewInput} from '../style';
 
-  export default function RegistrarSenha({ navigation }) {
+export default function RegistrarSenhaRepetir({ navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleConfirm, setmodalVisibleConfirm] = useState(false);
@@ -40,7 +40,7 @@ import { LAppContainer, LAppInput,
                     VOLTAR
                 </LAppText>
             </LAppSocialButtonFacebook>
-            <LAppSocialButtonFacebook onPress={() => navigation.navigate('RegistrarSenhaRepetir')} style={{backgroundColor: '#A9DA6B'}}>
+            <LAppSocialButtonFacebook style={{backgroundColor: '#A9DA6B'}}>
                 <LAppText style={{color:'#FFFFFF',}}>
                     CONTINUAR...
                 </LAppText>
