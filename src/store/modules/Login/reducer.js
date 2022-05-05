@@ -1,17 +1,17 @@
 import { LoginTypes } from "./ActionsTypes";
 
 const INITIAL_STATE = {
-    data: {usuario: null},
-    personagens: [],
+    data: {Email: null,Senha:null },
     loading: false
 }
 
 export default function login(state = INITIAL_STATE, actions){
     switch(actions.type) {
         case LoginTypes.SIGN_IN_REQUEST: {
-            //const{username, password} = actions.payload
-            //console.log('Username: ', username)
-            //console.log('Password: ', password)
+            console.log('teste')
+            const {Email, Senha} = actions.payload
+            console.log('Username: ', Email)
+            console.log('Password: ', Senha)
             return {...state, loading: true}
         }
 
@@ -28,7 +28,6 @@ export default function login(state = INITIAL_STATE, actions){
             //console.log('Password: ', password)
             return {...state, loading: false}
         }
-
         default:
             return state;
     }

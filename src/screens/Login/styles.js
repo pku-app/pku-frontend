@@ -5,8 +5,8 @@ export const LAppContainer = styled.View`
   background: #808080;
 `;
 
-export const LAppCabecalho = styled.View`
-  height: 200px;
+export const LAppHeader = styled.View`
+  height: 170px;
   left: 0px;
   top: 0px;
 
@@ -17,7 +17,7 @@ export const LAppCabecalho = styled.View`
 export const LAppLogo = styled.View`
   width: 181px;
   height: 94px;
-  top: 80px;
+  top: 42px;
   alignSelf: center
 
   background: #FFFFFF;
@@ -41,8 +41,8 @@ export const LAppLoginButton = styled.TouchableOpacity`
   width: 300px;
   height: 45px;  
 
-  margin-top:50px
-  margin-bottom:20px
+  margin-top:24px
+  margin-bottom:24px
 
   display: flex;
   alignItems:center;

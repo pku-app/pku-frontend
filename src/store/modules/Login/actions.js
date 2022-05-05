@@ -1,9 +1,9 @@
 import { LoginTypes } from './ActionsTypes'
 
-export function signInRequest(username, password) {
+export function signInRequest(Email, Senha) {
     return{
         type: LoginTypes.SIGN_IN_REQUEST,
-        payload: {username, password},
+        payload: {Email, Senha},
     }
 }
 

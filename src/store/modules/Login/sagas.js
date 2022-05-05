@@ -5,9 +5,9 @@ import { signInSuccess, signInError } from "./actions";
 
 function* SignIn({payload}) {
     try {
-        const resultado = yield call(api.get, '/character')
-        //console.log('API RESULTADO -', resultado)
-        yield put(signInSuccess(resultado.data.results))
+        //const resultado = yield call(api.get, '/character')
+        console.log('API RESULTADO -')
+        //yield put(signInSuccess(resultado.data.results))
     } catch (e) {
         console.log(e)
         yield put(signInError())
