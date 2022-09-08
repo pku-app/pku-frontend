@@ -1,7 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useSelector } from 'react-redux';
 import Login from './Login';
 import Home from './Home';
-import { useSelector } from 'react-redux';
+import SignUp from './SignUp';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function RootNavigation() {
       <Stack.Screen name="Login" component={Login} />
       :<Stack.Screen name="Home" component={Home} />
     }
+     <Stack.Screen name="SignUp" component={SignUp} />
   </Stack.Navigator>
   );
 }

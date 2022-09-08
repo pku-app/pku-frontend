@@ -4,6 +4,7 @@ import api from '../../../services/api'
 export function signIn(email, password){
   return dispatch =>{
     dispatch(signInRequest())
+    
     return api.post('auth/signin',{
       "email": email,
       "password": password

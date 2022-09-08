@@ -16,9 +16,11 @@ export const loginReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(signInRequest, (state, action) => {
       state.loading = true
+      state.message = null
     })
     .addCase(signInSuccess, (state, action) => {
       state.loading = false
+      state.message = null
       state.token = action.payload
     })
     .addCase(signInFaliure, (state, action) => {
@@ -28,6 +30,7 @@ export const loginReducer = createReducer(initialState, (builder) => {
     .addCase(signOut, (state, action) => {
       state.loading = false
       state.token = null
+      state.message = null
     })
     
 })

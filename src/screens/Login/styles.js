@@ -37,5 +37,5 @@ export const Style = StyleSheet.create({
   },
   link: {
     color: COLORS.paletteBlue,
-  }
+  },
 });
