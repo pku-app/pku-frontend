@@ -1,16 +1,19 @@
-import { applyMiddleware, compose, createStore } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import { rootReducer } from './modules/rootReducer';
-import rootSaga from './modules/rootSaga';
+import { configureStore } from '@reduxjs/toolkit'
+import { loginReducer } from './modules/Login/reducer'
+import { signUpReducer } from './modules/SignUp/reducer'
+import { signUpFormReducer } from './modules/SignUp/Form/reducer'
+import { productRegReducer } from './modules/ProductRegistration/reducer'
 
-const sagaMiddleware = createSagaMiddleware();
+const reducer = {
+  loginReducer: loginReducer,
+  signUpReducer: signUpReducer,
+  signUpFormReducer: signUpFormReducer,
+  productRegReducer : productRegReducer,
+}
 
-const middlewares = [sagaMiddleware];
+const Store = configureStore({
+  reducer,
+  devTools: true,
+});
 
-const composer = compose(applyMiddleware(...middlewares));
-
-const store = createStore(rootReducer, composer);
-
-sagaMiddleware.run(rootSaga);
-
-export default store;
+export default Store

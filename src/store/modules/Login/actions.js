@@ -1,28 +1,26 @@
-import { LoginTypes } from './ActionsTypes'
+import { createAction } from '@reduxjs/toolkit'
+import api from '../../../services/api'
 
-export function signInRequest(username, password) {
-    return{
-        type: LoginTypes.SIGN_IN_REQUEST,
-        payload: {username, password},
-    }
-}
-
-
-export function signInSuccess(data){
-    return{
-        type: LoginTypes.SIGN_IN_SUCCESS,
-        payload: {data},
-    }
-}
-
-export function signInError(){
-    return{
-        type: LoginTypes.SIGN_IN_FAILURE,
-    }
-}
-
-/*
-export function signInFailure() {
+export function signIn(email, password){
+  return dispatch =>{
+    dispatch(signInRequest())
     
+    return api.post('auth/signin',{
+      "email": email,
+      "password": password
+    })
+    .then((response) => {
+      dispatch(signInSuccess(response.data.accessToken))
+    }).catch((err) => {
+      dispatch(signInFaliure(err.message))
+    })
+  }
 }
-*/
+
+export const signInRequest = createAction('signIn/request')
+export const signInSuccess = createAction('signIn/success')
+export const signInFaliure = createAction('signIn/faliure')
+
+// It will be refactored when the API feature is finished
+export const signOut = createAction('signOut/request')
+

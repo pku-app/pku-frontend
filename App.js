@@ -1,14 +1,22 @@
 import React from 'react';
-import RootNavigation from './src/route';
+import { StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
-import {Provider} from 'react-redux';
-import store from './src/store';
+import { NativeBaseProvider, extendTheme} from 'native-base';
+import RootNavigation from './src/screens/navigation'
+import Store from './src/store'
+import COLORS from './src/components/ColorPallete';
+
+const theme = extendTheme({ colors: COLORS });
 
 export default function App() {
   return (
-    <Provider store = {store}>
+    <Provider store={Store}>
+      <StatusBar />
       <NavigationContainer>
-        <RootNavigation />
+        <NativeBaseProvider theme={theme}>
+            <RootNavigation />
+        </NativeBaseProvider>
       </NavigationContainer>
     </Provider>
   );

@@ -1,35 +1,36 @@
-import { LoginTypes } from "./ActionsTypes";
+import { createReducer } from '@reduxjs/toolkit'
+import { 
+  signInRequest, 
+  signInSuccess, 
+  signInFaliure, 
+  signOut 
+} from './actions'
 
-const INITIAL_STATE = {
-    data: {usuario: null},
-    personagens: [],
-    loading: false
+const initialState = {
+  token: null,
+  loading: false,
+  message: null,
 }
 
-export default function login(state = INITIAL_STATE, actions){
-    switch(actions.type) {
-        case LoginTypes.SIGN_IN_REQUEST: {
-            //const{username, password} = actions.payload
-            //console.log('Username: ', username)
-            //console.log('Password: ', password)
-            return {...state, loading: true}
-        }
-
-        case LoginTypes.SIGN_IN_SUCCESS: {
-            const{data} = actions.payload
-            //console.log('Username: ', username)
-            //console.log('Password: ', password)
-            return {...state, loading: false, personagens: data}
-        }
-
-        case LoginTypes.SIGN_IN_FAILURE: {
-            const{data} = actions.payload
-            //console.log('Username: ', username)
-            //console.log('Password: ', password)
-            return {...state, loading: false}
-        }
-
-        default:
-            return state;
-    }
-}
+export const loginReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(signInRequest, (state, action) => {
+      state.loading = true
+      state.message = null
+    })
+    .addCase(signInSuccess, (state, action) => {
+      state.loading = false
+      state.message = null
+      state.token = action.payload
+    })
+    .addCase(signInFaliure, (state, action) => {
+      state.loading = false
+      state.message = action.payload
+    })
+    .addCase(signOut, (state, action) => {
+      state.loading = false
+      state.token = null
+      state.message = null
+    })
+    
+})
